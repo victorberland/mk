@@ -6,6 +6,8 @@ services:
     labels:
       - traefik.enable=yes
       - traefik.frontend.rule=Host:mk.victorberland.com
-      - traefik.port=80
+      - traefik.port=80A
+    ports:
+      - 3800:80
     volumes:
       - ./dist/:/usr/local/apache2/htdocs/
