@@ -4,9 +4,9 @@ services:
     image: httpd
     restart: always
     labels:
-      - traefik.enable=yes
+      - traefik.enable=true
       - traefik.frontend.rule=Host:mk.victorberland.com
-      - traefik.port=80A
+      - traefik.port=80
     ports:
       - 3800:80
     volumes:
