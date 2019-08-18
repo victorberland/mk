@@ -19,7 +19,7 @@ export default new Router({
       component: Category
     }, {
       name: 'Page',
-      path: '/*/:slug',
+      path: '/:category/:slug',
       component: Page
     }, {
       name: '404',

@@ -9,7 +9,7 @@
         <div class="text" v-html="content"></div>
         <ul class="posts">
           <li v-for="post in posts">
-            <router-link :to="{ name: 'Page', params: { slug: post.title_slug }}">{{ post.title }}</router-link>
+            <router-link :to="{ name: 'Page', params: { category: slug, slug: post.title_slug }}">{{ post.title }}</router-link>
           </li>
         </ul>
       </main>
@@ -65,7 +65,8 @@ export default {
   methods: {
   },
   created () {
-    var slug = this.$route.params.slug;
+    var slug = this.$route.params.slug
+		this.slug = slug
 
     // Get category content
 		api({
@@ -96,7 +97,6 @@ export default {
       .then( posts => {
         console.log(posts);
 				this.posts = posts.data.entries
-				console.log(this.posts)
       })
       .catch( error => {
         console.log(error);
