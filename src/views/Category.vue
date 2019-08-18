@@ -77,7 +77,7 @@ export default {
 			}
 		})
       .then( response => {
-				console.log(response);
+				//console.log(response);
         this.title = response.data.entries[0].title
         this.content = this.innerHTML = response.data.entries[0].content
 
@@ -90,12 +90,12 @@ export default {
 		api({
 			method: 'post',
 			url: 'collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
-			body: JSON.stringify({
-        filter: { category: slug },
-			})
+			data: {
+        filter: { category: slug }
+			}
 		})
       .then( posts => {
-        //console.log(posts);
+        console.log(posts);
 				this.posts = posts.data.entries
       })
       .catch( error => {
