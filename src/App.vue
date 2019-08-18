@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <div class="view" :class="{
-      // 'view-front': $route.name === 'frontpage',
-      // 'view-share-full': shareFull
-      }"
-    >
-      <!--<router-view @content-ready="isLoaded = true"></router-view>-->
+    <div class="view">
       <router-view></router-view>
 
     </div>
@@ -14,11 +9,7 @@
 
 <script>
 export default {
-  name: 'app',
-  data: () => ({
-    isLoaded: false,
-    shareFull: false
-  }),
+  name: 'app'
 }
 </script>
 
@@ -41,21 +32,12 @@ html, body, #app {
   padding: 0;
   background-color: darken(desaturate(#D1D2F9, 35%), 5%);
   font-family: 'Roboto';
-  //background-color: black;
 }
 
 
 .view {
   min-height: calc(100vh - 45px);
   transition: clip-path 1.3s ease;
-  // .title {
-  //   @include serif;
-  //   font-size: 4vw;
-  //   font-weight: 600;
-  //   color: $red;
-  //   margin-top: 100px;
-  //   padding-bottom: 80px;
-  // }
 }
 
 .row {
@@ -78,16 +60,4 @@ html, body, #app {
   padding-top: 80px;
 }
 
-// .title {
-//   @include serif;
-//   font-size: 4vw;
-//   color: $red;
-// }
-
-// .fade-enter-active, .fade-leave-active {
-//   transition: 0.5s ease-in-out;
-// }
-// .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-//   width: 5%;
-// }
 </style>

@@ -70,14 +70,14 @@ export default {
 
     // Get category content
 		api({
-			method: 'get',
+			method: 'post',
 			url: 'collections/get/categories?token=282daa48751b0ac32d31dc14eac44c',
-			body: JSON.stringify({
-        filter: { title_slug: slug },
-			})
+			data: {
+        filter: { title_slug: slug }
+			}
 		})
       .then( response => {
-				//console.log(response);
+				console.log(response);
         this.title = response.data.entries[0].title
         this.content = this.innerHTML = response.data.entries[0].content
 
@@ -88,14 +88,14 @@ export default {
 
     // Get posts in category
 		api({
-			method: 'get',
+			method: 'post',
 			url: 'collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
 			body: JSON.stringify({
         filter: { category: slug },
 			})
 		})
       .then( posts => {
-        console.log(posts);
+        //console.log(posts);
 				this.posts = posts.data.entries
       })
       .catch( error => {

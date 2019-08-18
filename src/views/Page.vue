@@ -23,28 +23,21 @@ export default {
     title: '',
     content: '',
     loaded: false,
-    showText: false,
-    posts: ''
+    showText: false
   }),
-  computed: {
-    // slug () {
-    //   return this.$route.params.slug;
-    // }
-  },
   methods: {
   },
   created () {
     var slug = this.$route.params.slug;
     // Get content
 		api({
-			method: 'get',
+			method: 'post',
 			url: 'collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
 			body: JSON.stringify({
         filter: { title_slug: slug },
 			})
 		})
       .then( response => {
-        console.log(response);
         this.title = response.data.entries[0].title
         this.content = this.innerHTML = response.data.entries[0].content
 
@@ -65,6 +58,7 @@ export default {
 
   },
   methods: {
+		// Close button
     close: function() {
       this.showText = false;
       var self = this;
@@ -79,7 +73,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import '../presets';
 
@@ -143,6 +136,7 @@ export default {
     line-height: 1.9em;
     margin-bottom: 100px;
     color: #333;
+		max-width: 800px;
   }
 }
 

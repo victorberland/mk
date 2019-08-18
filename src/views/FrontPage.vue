@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <main class="home-content">
-      <span v-if="page.content" v-html="page.content.raw"></span>
+    <main class="home-content" v-html="front">
     </main>
     <ul class="bubbles">
       <!--<li v-for="page in pages" class="bubble" @click="$event.target.classList.add('bubble-up')">-->
@@ -18,18 +17,12 @@
 <script>
 import api from '../api';
 import router from '../router';
-import SignUp from '../components/SignUp';
 
 
 export default {
   name: 'front',
-  components: {
-    SignUp
-  },
   data: () => ({
-    page: {
-      content: 'test'
-    },
+		front: '',
     categories: '',
     loaded: false,
     loading: false,
@@ -41,7 +34,7 @@ export default {
     // Get front page content
     api.get('singletons/get/front?token=282daa48751b0ac32d31dc14eac44c')
       .then( response => {
-        this.page = response.data;
+        this.front = response.data.content
 
       })
       .catch( error => {
@@ -71,12 +64,12 @@ export default {
       var pageX = e.pageX;
       var pageY = e.pageY;
 
-      //document.querySelector('.bubble:nth-child(2)').style.transform = 'translate(-'+ pageX / 40 +'px, -'+ pageY / 40 +'px)';
-      //document.querySelector('.bubble:nth-child(3)').style.transform = 'translate(-'+ pageX / 80 +'px, -'+ pageY / 80 +'px)';
-      //document.querySelector('.bubble:nth-child(4)').style.transform = 'translate(-'+ pageX / 50 +'px, -'+ pageY / 50 +'px)';
-      //document.querySelector('.bubble:nth-child(5)').style.transform = 'translate(-'+ pageX / 10 +'px, -'+ pageY / 10 +'px)';
-      //document.querySelector('.bubble:nth-child(6)').style.transform = 'translate(-'+ pageX / 70 +'px, -'+ pageY / 70 +'px)';
-      //document.querySelector('.bubble:nth-child(7)').style.transform = 'translate(-'+ pageX / 22 +'px, -'+ pageY / 22 +'px)';
+      document.querySelector('.bubble:nth-child(1)').style.transform = 'translate(-'+ pageX / 40 +'px, -'+ pageY / 40 +'px)';
+      document.querySelector('.bubble:nth-child(2)').style.transform = 'translate(-'+ pageX / 80 +'px, -'+ pageY / 80 +'px)';
+      document.querySelector('.bubble:nth-child(3)').style.transform = 'translate(-'+ pageX / 50 +'px, -'+ pageY / 50 +'px)';
+      document.querySelector('.bubble:nth-child(4)').style.transform = 'translate(-'+ pageX / 10 +'px, -'+ pageY / 10 +'px)';
+      document.querySelector('.bubble:nth-child(4)').style.transform = 'translate(-'+ pageX / 70 +'px, -'+ pageY / 70 +'px)';
+      document.querySelector('.bubble:nth-child(6)').style.transform = 'translate(-'+ pageX / 22 +'px, -'+ pageY / 22 +'px)';
     }
   },
   methods: {
@@ -108,12 +101,9 @@ export default {
   top: 29vh;
   left: 25%;
   text-transform: uppercase;
-  span {
-    max-width: 600px;
-    line-height: 2em;
-    //color: desaturate(darken($signature, 60%), 60%);
-    color: #333;
-  }
+	line-height: 2em;
+	//color: desaturate(darken($signature, 60%), 60%);
+	color: #333;
 }
 
 .bubbles {
