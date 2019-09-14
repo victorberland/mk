@@ -16,7 +16,7 @@ pipeline {
     stage('S') {
       agent any
       steps {
-        sh 'docker-compose up -d'
+        sh 'docker stack deploy'
       }
     }
   }
