@@ -17,6 +17,7 @@ pipeline {
       agent any
       steps {
         sh 'docker-compose up -d'
+        sh 'ls'
       }
     }
   }
