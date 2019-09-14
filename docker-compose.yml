@@ -2,7 +2,6 @@ version: '3'
 services:
   web:
     image: httpd
-    restart: always
     labels:
       - traefik.enable=true
       - traefik.frontend.rule=Host:mk.victorberland.com
@@ -12,9 +11,3 @@ services:
       - 3800:80
     volumes:
       - ./dist/:/usr/local/apache2/htdocs/
-    networks:
-      - traefik
-
-networks:
-  traefik:
-    external: true
