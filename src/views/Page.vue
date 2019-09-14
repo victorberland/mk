@@ -29,15 +29,18 @@ export default {
   },
   created () {
     var slug = this.$route.params.slug;
+		var category = this.$route.params.category;
+		alert(slug);
     // Get content
 		api({
 			method: 'post',
-			url: 'collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
+			url: '/collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
 			body: JSON.stringify({
-        filter: { title_slug: slug },
+				filter: { title_slug: slug }
 			})
 		})
       .then( response => {
+				console.log(response)
         this.title = response.data.entries[0].title
         this.content = this.innerHTML = response.data.entries[0].content
 
