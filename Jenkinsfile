@@ -1,21 +1,12 @@
+
 pipeline {
   agent {
-    node {
-      label 'docker'
+    docker {
+      image 'node:10'
     }
-  }
-  tools {
-    nodejs 'nodejs'
+
   }
   stages {
-    stage ('S'){
-      steps {
-        parallel (
-          node: { sh "npm -v" },
-          docker: { sh "docker -v" }
-        )
-      }
-    }
     stage('B') {
       steps {
         sh 'npm install'
