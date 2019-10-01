@@ -35,9 +35,9 @@ export default {
 		api({
 			method: 'post',
 			url: '/collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
-			body: JSON.stringify({
+			data: {
 				filter: { title_slug: slug }
-			})
+			}
 		})
       .then( response => {
 				console.log(response)
@@ -140,6 +140,9 @@ export default {
     margin-bottom: 100px;
     color: #333;
 		max-width: 800px;
+		img {
+			width: 100%;
+		}
   }
 }
 
