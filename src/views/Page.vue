@@ -30,11 +30,10 @@ export default {
   created () {
     var slug = this.$route.params.slug;
 		var category = this.$route.params.category;
-		alert(slug);
     // Get content
 		api({
 			method: 'post',
-			url: '/collections/get/posts?token=af6b2f6f190c7ad26f898b39a205a6',
+			url: '/collections/get/posts',
 			data: {
 				filter: { title_slug: slug }
 			}

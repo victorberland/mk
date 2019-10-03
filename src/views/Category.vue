@@ -71,7 +71,7 @@ export default {
     // Get category content
 		api({
 			method: 'post',
-			url: 'collections/get/categories?token=282daa48751b0ac32d31dc14eac44c',
+			url: 'collections/get/categories',
 			data: {
         filter: { title_slug: slug }
 			}
@@ -89,7 +89,7 @@ export default {
     // Get posts in category
 		api({
 			method: 'post',
-			url: 'collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
+			url: 'collections/get/posts',
 			data: {
         filter: { category: slug }
 			}
