@@ -41,7 +41,7 @@ export default {
   beforeRouteEnter (to, from, next) {
     // Send request til ruten vi har opprettet i APIen
     // this.slug = to.params.slug;
-    api.get(`/collections/get/categories/${to.params.slug}?token=282daa48751b0ac32d31dc14eac44c`).then(response => {
+    api.get(`/collections/get/categories/${to.params.slug}?token=af6b2f6f190c7ad26f898b39a205a6`).then(response => {
       // this er enda ikke tilgjengelig siden beforeRouteEnter
       // kjøres før komponentet for ruten enda ikke er opprettet
       // men du kan maniopulere komponentet i next callbacken
