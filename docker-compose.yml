@@ -12,9 +12,9 @@ services:
       - 3800:80
     # volumes:
     #   - ./dist/:/usr/local/apache2/htdocs/
-    # networks:
-      # - traefik
+    networks:
+      - traefik
 
-# networks:
-#   traefik:
-#     external: true
+networks:
+  traefik:
+    external: true
