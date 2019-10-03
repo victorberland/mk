@@ -32,7 +32,7 @@ export default {
   created () {
 
     // Get front page content
-    api.get('singletons/get/front?token=282daa48751b0ac32d31dc14eac44c')
+    api.get('singletons/get/front?token=af6b2f6f190c7ad26f898b39a205a6')
       .then( response => {
         this.front = response.data.content
 
@@ -42,7 +42,7 @@ export default {
       });
 
     // Get pages
-		api.get('collections/get/categories?token=282daa48751b0ac32d31dc14eac44c')
+		api.get('collections/get/categories?token=af6b2f6f190c7ad26f898b39a205a6')
       .then( response => {
         this.categories = response.data.entries;
 

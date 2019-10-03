@@ -34,7 +34,7 @@ export default {
     // Get content
 		api({
 			method: 'post',
-			url: '/collections/get/posts?token=282daa48751b0ac32d31dc14eac44c',
+			url: '/collections/get/posts?token=af6b2f6f190c7ad26f898b39a205a6',
 			data: {
 				filter: { title_slug: slug }
 			}
