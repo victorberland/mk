@@ -142,6 +142,9 @@ export default {
 		img {
 			width: 100%;
 		}
+		table, tr, td {
+			border: none;
+		}
   }
 }
 
