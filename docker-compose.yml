@@ -13,8 +13,8 @@ services:
     # volumes:
     #   - ./dist/:/usr/local/apache2/htdocs/
     networks:
-      - traefik
+      - web
 
 networks:
-  traefik:
+  web:
     external: true
