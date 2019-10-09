@@ -4,14 +4,10 @@ services:
     build: .
     restart: always
     labels:
-      - traefik.enable=true
-      - traefik.frontend.rule=Host:mk.victorberland.com
-      - traefik.port=80
-      - traefik.docker.network=traefik
-    ports:
-      - 3800:80
-    # volumes:
-    #   - ./dist/:/usr/local/apache2/htdocs/
+      - "traefik.enable=true"
+      - "traefik.http.routers.jenkins.rule=Host(`mk.victorberland.com`)"
+      - "traefik.http.routers.jenkins.tls.certresolver=mytlschallenge"
+
     networks:
       - web
 
