@@ -5,8 +5,8 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.jenkins.rule=Host(`mk.victorberland.com`)"
-      - "traefik.http.routers.jenkins.tls.certresolver=mytlschallenge"
+      - "traefik.http.routers.${NAME}.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${NAME}.tls.certresolver=mytlschallenge"
 
     networks:
       - web
